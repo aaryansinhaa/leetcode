@@ -1,7 +1,19 @@
+import java.util.Arrays;
 class Solution {
     static int[] nums = {1,2,3,4};
     public static boolean containsDuplicate(int[] nums) {
-        int counter = 0;
+       Arrays.sort(nums);
+       for(int i = 1; i<nums.length; i++)
+       {
+            if(nums[i] == nums[i-1])
+            {
+                return true;
+            }
+       }
+       return false;
+        /*
+         BRUTE FORCE APPROACH LOL
+         int counter = 0;
         for(int i = 0; i<nums.length; i++){
 
             for(int j = i+1; j< nums.length; j++){
@@ -18,6 +30,7 @@ class Solution {
         else{
             return false;
         }
+        */
     }
     public static void main(String[] args){
         boolean output = containsDuplicate(nums);
