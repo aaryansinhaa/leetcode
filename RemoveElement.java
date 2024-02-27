@@ -1,16 +1,13 @@
 public class RemoveElement{
     public static int removeElement(int[] nums, int val) {
-        int i = 0, count = 0;
-        int[] newnums = new int[nums.length];
-        while(i<nums.length){
-            if(nums[i] != val){
-                newnums[count] = nums[i];
-                count++;
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[index] = nums[i];
+                index++;
             }
-            i++;
         }
-        return count;
-        
+        return index;
     }
     static int[] nums = {3,2,2,3};
     public static void main(String[] args) {
